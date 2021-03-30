@@ -10,11 +10,11 @@ Running Instructions:
 from the main folder Basic_Matcher/
 1. Create the database :
   
- 1a. run 'python manage.py makemigrations basic_matcher'
+         1a. run 'python manage.py makemigrations basic_matcher'
 
- 1b. run 'python manage.py migrate'
+         1b. run 'python manage.py migrate'
 
- 1c. run 'python populate.py'
+         1c. run 'python populate.py'
   
 2. Run the server by 'python manage.py runserver' 
 3. Enter to <your_localhost_address>/basic_matcher
