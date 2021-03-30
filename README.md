@@ -10,8 +10,11 @@ Running Instructions:
 from the main folder Basic_Matcher/
 1. Create the database :
   1a. run 'python manage.py makemigrations basic_matcher'
+  
   1b. run 'python manage.py migrate'
+  
   1c. run 'python populate.py'
+  
 2. Run the server by 'python manage.py runserver' 
 3. Enter to <your_localhost_address>/basic_matcher
 4. For looking candidates that fit into the required job, enter the job's id and click search
@@ -76,7 +79,8 @@ Enter job's Id
 
 results
 
-![jobbyskillresults](https://user-images.githubusercontent.com/43497130/112991584-f4d61400-916f-11eb-8faa-f53dc8abf05c.png)
+![jobbyskillmultyresults](https://user-images.githubusercontent.com/43497130/112992138-95c4cf00-9170-11eb-8bcf-95bcbd716c46.png)
+
 
 
 
