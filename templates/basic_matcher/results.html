@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class = "text-center mb-3">Find Candidate</h1>   
+
+    {% if fit_candidates %}
+        {% for candidate in fit_candidates %}
+            <div class="card mb-3">
+                <div class = "card-body">
+                    <p class = "lead">
+                        {{ candidate.id }}
+                        {{ candidate.title }}
+                        <p>
+                            {% for skill in candidate.skill_set.all %}
+                                {{ skill.title }}
+                            {% endfor %}    
+                        </p>
+                    </p>
+                   
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+       <p>No Candidate Available</p>
+    {% endif %}
+{% endblock %}

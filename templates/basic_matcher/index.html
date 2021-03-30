@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class = "text-center mb-3">Candidate Matcher</h1> 
+    
+    <h2 class = "text-center mb-3">Find Candidate</h2>
+    
+    <form method = "get" action="{% url 'basic_matcher:results' %}">
+        {% csrf_token %} 
+        <div class="text-center mb-3">
+            <label for="job_id">Job ID</label>
+            <input type="text" id="job_id" name = "job_id" >
+            <input type="submit" value="Search" class="btn btn-success btn-lg btn-block" />
+        </div> 
+    </form>
+    
+    <h3 class = "text-center mb-3">Candidates</h3> 
+    {% if latest_candidates %}
+        {% for candidate in latest_candidates %}
+            <div class="card mb-3">
+                <div class = "card-body">
+                    <p class = "lead">
+                        {{ candidate.id }}
+                        {{ candidate.title }}
+                        <p>
+                            {% for skill in candidate.skill_set.all %}
+                                {{ skill.title }}
+                            {% endfor %}    
+                        </p>
+                    </p>
+                   
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+       <p>No Candidate Available</p>
+    {% endif %}
+    
+    <h3 class = "text-center mb-3">Jobs</h3>  
+    {% if latest_jobs %}
+        {% for job in latest_jobs %}
+            <div class="card mb-3">
+                <div class = "card-body">
+                    <p class = "lead">
+                        {{ job.id }}
+                        {{ job.title }}
+                        <p>
+                            {% for skill in job.skill_set.all %}
+                                {{ skill.title }}
+                            {% endfor %}    
+                        </p>
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+       <p>No Job Available</p>
+    {% endif %}
+
+{% endblock %}
